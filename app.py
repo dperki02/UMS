@@ -1,15 +1,15 @@
-from flask import Flask
+from flask import Flask, render_template, request
 
 app = Flask(__name__)
 
-@app.route("/")
+@app.route('/')
 def home():
     return "Hello, Flask running from VS Code!"
 
 @app.route('/register', methods=['GET', 'POST'])
 def register():
     if request.method == 'POST':
-        # Later: Implement DB insert logic here
+        # Later: Handle Form Submission Implement DB insert logic here
         return "User registered successfully!"
     return render_template('register.html')
 
