@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Registration Successful</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='style.css') }}" />
+  </head>
+  <body>
+    <div class="container">
+      <h2>Registration Successful!</h2>
+      <p class="italic-text">Your account has been created successfully.</p>
+      <nav>
+        <a href="{{ url_for('home') }}">Back to Home</a>
+        <a href="{{ url_for('register') }}">Register Another User</a>
+      </nav>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Asaka.net User Management</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='style.css') }}" />
+  </head>
+  <body>
+    <div class="container">
+      <h2>Welcome to Asaka.net User Management</h2>
+      <nav>
+        <a href="{{ url_for('register') }}">Register User</a>
+        <a href="{{ url_for('users') }}">Admin Panel</a>
+      </nav>
+      <p class="italic-text">Manage your users efficiently and securely.</p>
+    </div>
+  </body>
+</html>
