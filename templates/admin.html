@@ -38,18 +38,27 @@
           </tr>
         </thead>
         <tbody>
-          {% for user in users %}
+          {% if users %} {% for user in users %}
           <tr>
             <td>{{ user.id }}</td>
             <td>{{ user.username }}</td>
             <td>{{ user.first_name }} {{ user.last_name }}</td>
             <td>{{ user.email }}</td>
           </tr>
-          {% else %}
+          {% endfor %} {% else %}
           <tr>
-            <td colspan="4">No users found.</td>
+            <td
+              colspan="4"
+              style="
+                color: red;
+                font-size: 1.3em;
+                font-weight: bold;
+                text-align: center;
+              ">
+              No users found.
+            </td>
           </tr>
-          {% endfor %}
+          {% endif %}
         </tbody>
       </table>
     </div>

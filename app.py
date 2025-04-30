@@ -48,8 +48,32 @@ def register():
 
 @app.route('/users', methods=['GET'])
 def users():
-    users = []  # Later: Fetch from DB clearly
-    return render_template('admin.html', users=users)
+    query = request.args.get('q', '')
+
+    try:
+        conn = mysql.connector.connect(**db_config)
+        cursor = conn.cursor(dictionary=True)
+
+        if query:
+            sql = """
+                SELECT * FROM users 
+                WHERE username LIKE %s OR first_name LIKE %s OR last_name LIKE %s OR email LIKE %s
+            """
+            like_query = f"%{query}%"
+            cursor.execute(sql, (like_query, like_query, like_query, like_query))
+        else:
+            cursor.execute("SELECT * FROM users")
+
+        users = cursor.fetchall()
+
+        cursor.close()
+        conn.close()
+
+        return render_template('admin.html', users=users)
+
+    except mysql.connector.Error as err:
+        return f"Error: {err}"
+
 
 if __name__ == "__main__":
     app.run(host='0.0.0.0', port=5000, debug=True)
