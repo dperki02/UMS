@@ -1,0 +1,30 @@
+{% extends 'base.html' %} {% block content %}
+<div class="container mt-4">
+  <h2>Help & Documentation</h2>
+  <p>
+    Welcome to the admin portal help page. Here you can find documentation, FAQ,
+    and troubleshooting guides.
+  </p>
+
+  <h4>User Guide</h4>
+  <p>
+    <a
+      href="{{ url_for('static', filename='Admin_Portal_User_Documentation.pdf') }}"
+      target="_blank"
+      >Download Admin Portal Documentation (PDF)</a
+    >
+  </p>
+
+  <h4>Frequently Asked Questions</h4>
+  <ul>
+    <li>
+      <strong>Why can't I see user data?</strong> Verify your database
+      connection and data.
+    </li>
+    <li>
+      <strong>How to report an issue?</strong> Contact your system
+      administrator.
+    </li>
+  </ul>
+</div>
+{% endblock %}

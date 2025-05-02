@@ -1,20 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <title>Asaka.net User Management</title>
-    <link
-      rel="stylesheet"
-      href="{{ url_for('static', filename='style.css') }}" />
-  </head>
-  <body>
-    <div class="container">
-      <h2>Welcome to Asaka.net User Management</h2>
-      <nav>
-        <a href="{{ url_for('register') }}">Register User</a>
-        <a href="{{ url_for('users') }}">Admin Panel</a>
-      </nav>
-      <p class="italic-text">Manage your users efficiently and securely.</p>
+  {% extends 'base.html' %} {% block title %}Home - Asaka.net Admin {% endblock
+  %} {% block content %}
+  <div class="d-flex justify-content-center align-items-center">
+    <div
+      class="text-center p-4 rounded shadow"
+      style="
+        background-color: rgba(255, 255, 255, 0.9);
+        color: black;
+        width: 35rem;
+      ">
+      <h2>Welcome to Asaka.net Admin Portal</h2>
+      <p style="font-size: 1.25em">
+        <em>Manage your users efficiently and securely.</em>
+      </p>
     </div>
-  </body>
+  </div>
+  {% endblock %}
 </html>

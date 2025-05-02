@@ -4,12 +4,16 @@ body {
     url("images/background.jpg");
   background-size: cover;
   background-position: center;
+  background-repeat: no-repeat;
   height: 100vh;
   color: #ffffff;
   display: flex;
   align-items: center;
   justify-content: center;
   margin: 0;
+}
+.content-container {
+  margin-top: 80px; /* clearly match navbar height */
 }
 
 .container {
@@ -18,7 +22,7 @@ body {
   padding: 30px;
   border-radius: 10px;
   box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
-  max-width: 500px;
+  max-width: 600px;
   width: 100%;
   text-align: center;
 }
@@ -66,8 +70,16 @@ nav a:hover {
 .btn-primary:hover {
   background-color: #094c74;
 }
+.success {
+  color: beige;
+}
 
 .italic-text {
   font-style: italic;
   color: #0b3d5e;
+}
+
+.italic-text-success {
+  font-style: italic;
+  color: whitesmoke;
 }
